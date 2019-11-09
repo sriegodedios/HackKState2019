@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 #navigation {
-	color: red;
+	color: darkorchid;
 }
 .container {
 	margin: 0;
@@ -24,6 +24,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: darkorchid;
 }
 
 /* Carousel */
@@ -41,6 +42,29 @@ for details on configuring this project to bundle and minify static web assets. 
 #qrCode {
     margin: 15px;
 }
+
+textarea {
+    resize: none;
+}
+
+#pythoninput {
+    padding: 10px 24px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    resize: none;
+
+}
+
+.button {
+    background-color: #6700ab;
+    color: white;
+    border: 12px solid #6700ab;
+}
+.button:hover {
+        background-color: #6700ab; 
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    } 
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
