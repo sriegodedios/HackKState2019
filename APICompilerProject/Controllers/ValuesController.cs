@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using IronPython;
+using IronPython.Hosting;
 
 namespace APICompilerProject.Controllers
 {
@@ -19,9 +21,18 @@ namespace APICompilerProject.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<int> Get(int id)
         {
-            return "value";
+            int a = 1;
+            int b = 2;
+
+
+
+            Microsoft.Scripting.Hosting.ScriptEngine py = Python.CreateEngine(); // allow us to run ironpython programs
+            Microsoft.Scripting.Hosting.ScriptScope s = py.CreateScope(); // you need this to get the variables
+            py.Execute("x = " + a + "+" + b, s);
+
+            return s.GetVariable("x");
         }
 
         // POST api/values
