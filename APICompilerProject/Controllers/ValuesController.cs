@@ -1,12 +1,12 @@
 ﻿using System;
-using System.IO;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IronPython;
 using IronPython.Hosting;
+using System.Diagnostics;
+using System.IO;
 
 namespace APICompilerProject.Controllers
 {
@@ -23,18 +23,20 @@ namespace APICompilerProject.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<int> Get(int id)
+        public ActionResult<string> Get(int id)
         {
-            int a = 1;
-            int b = 2;
+            /* int a = 1;
+             int b = 2;
 
 
 
-            Microsoft.Scripting.Hosting.ScriptEngine py = Python.CreateEngine(); // allow us to run ironpython programs
-            Microsoft.Scripting.Hosting.ScriptScope s = py.CreateScope(); // you need this to get the variables
-            py.Execute("x = " + a + "+" + b, s);
+             Microsoft.Scripting.Hosting.ScriptEngine py = Python.CreateEngine(); // allow us to run ironpython programs
+             Microsoft.Scripting.Hosting.ScriptScope s = py.CreateScope(); // you need this to get the variables
+             py.Execute("x = " + a + "+" + b, s);
 
-            return s.GetVariable("x");
+             return s.GetVariable("x");*/
+
+            return PythonInterpreter(0, 0);
         }
 
         // POST api/values
@@ -54,10 +56,10 @@ namespace APICompilerProject.Controllers
         public void Delete(int id)
         {
         }
-
+        
         public string PythonInterpreter(int x, int y)
         {
-            string pythonInterpreter = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Python 3.7";
+            string pythonInterpreter = @"C:\Users\shanerd\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.8";
             string fileName = "test.py";
             //int x = 2;
             //int y = 5;
@@ -66,6 +68,7 @@ namespace APICompilerProject.Controllers
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.Arguments = fileName + " " + x + " " + y;
+            start.FileName = pythonInterpreter;
 
             Process process = new Process();
             process.StartInfo = start;
