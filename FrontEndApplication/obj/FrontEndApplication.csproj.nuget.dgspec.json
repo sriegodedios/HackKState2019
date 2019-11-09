@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj": {}
+    "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj": {
+    "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj",
+        "projectUniqueName": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj",
         "projectName": "FrontEndApplication",
-        "projectPath": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj",
-        "packagesPath": "C:\\Users\\shanerd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\obj\\",
+        "projectPath": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj",
+        "packagesPath": "/Users/sriegodedios/.nuget/packages/",
+        "outputPath": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\shanerd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/sriegodedios/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,6 +58,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.6.10, )"
             }
           },
           "imports": [
