@@ -1,0 +1,14 @@
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.deps.json
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.runtimeconfig.json
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.runtimeconfig.dev.json
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.dll
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.pdb
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.csprojAssemblyReference.cache
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.csproj.CoreCompileInputs.cache
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorAssemblyInfo.cache
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorAssemblyInfo.cs
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.AssemblyInfoInputs.cache
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.AssemblyInfo.cs
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorTargetAssemblyInfo.cache
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.dll
+C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.pdb

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICompilerProject", "APICompilerProject\APICompilerProject.csproj", "{38008AD5-5431-45EF-A053-BF8FC36FDD2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38008AD5-5431-45EF-A053-BF8FC36FDD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38008AD5-5431-45EF-A053-BF8FC36FDD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38008AD5-5431-45EF-A053-BF8FC36FDD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38008AD5-5431-45EF-A053-BF8FC36FDD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {947B638B-84C0-4B72-A5B0-62EDB4C8A752}
+	EndGlobalSection
+EndGlobal
