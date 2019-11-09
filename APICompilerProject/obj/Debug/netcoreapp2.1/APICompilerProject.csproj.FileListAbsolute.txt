@@ -12,3 +12,17 @@ C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\ne
 C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorTargetAssemblyInfo.cache
 C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.dll
 C:\Users\shanerd\source\repos\APICompilerProject\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.pdb
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.deps.json
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.runtimeconfig.json
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.runtimeconfig.dev.json
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.dll
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\bin\Debug\netcoreapp2.1\APICompilerProject.pdb
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.csprojAssemblyReference.cache
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.csproj.CoreCompileInputs.cache
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorAssemblyInfo.cache
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorAssemblyInfo.cs
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.AssemblyInfoInputs.cache
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.AssemblyInfo.cs
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.RazorTargetAssemblyInfo.cache
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.dll
+C:\Users\sethyenni\Documents\HackKState2019\APICompilerProject\obj\Debug\netcoreapp2.1\APICompilerProject.pdb

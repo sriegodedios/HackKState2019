@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,6 +44,27 @@ namespace APICompilerProject
 
             app.UseHttpsRedirection();
             app.UseMvc();
+        }
+
+        public string PythonInterpreter(int x, int y)
+        {
+            string pythonInterpreter = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Python 3.7";
+            string fileName = "test.py";
+            //int x = 2;
+            //int y = 5;
+
+            ProcessStartInfo start = new ProcessStartInfo(fileName);
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.Arguments = fileName + " " + x + " " + y;
+
+            Process process = new Process();
+            process.StartInfo = start;
+            process.Start();
+
+            StreamReader stream = process.StandardOutput;
+            string result = stream.ReadLine();
+            return result;
         }
     }
 }
