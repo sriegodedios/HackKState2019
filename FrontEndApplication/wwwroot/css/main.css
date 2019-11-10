@@ -8,9 +8,10 @@ body {
 }
 /*--- navigation bar ---*/
 .navbar {
-    background:#fff;
+    background: #fff;
     border: 1px solid gray;
 }
+
 .nav-link,
 .navbar-brand {
     color: #7014E8;
@@ -19,33 +20,40 @@ body {
     font-size: 22px;
     font-family: Raleway, sans-serif;
 }
-.navbar-brand:hover {
-    color: #8333f2;
-}
+
+    .navbar-brand:hover {
+        color: #8333f2;
+    }
+
 .nav-link {
     margin-right: 1em !important;
     font-size: 1.3rem;
     border: 2px solid #7014E8;
     padding: 2px 5px;
 }
-.nav-link:hover {
-    color: #fff;
-    background: linear-gradient(#7014E8, #4733DD);  
-    border: 1px solid #fff; 
-}
-.nav-link:active {
-    color: #fff;
-    background: #8333f2;
-}
+
+    .nav-link:hover {
+        color: #fff;
+        background: linear-gradient(#7014E8, #4733DD);
+        border: 1px solid #fff;
+    }
+
+    .nav-link:active {
+        color: #fff;
+        background: #8333f2;
+    }
+
 .navbar-collapse {
     justify-content: flex-end;
 }
+
 .header {
     background-image: url('images/header-background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
 }
+
 .header-button {
     background: linear-gradient(#7014E8, #4733DD);
     padding: 15px 40px;
@@ -53,13 +61,15 @@ body {
     color: #fff;
     text-decoration: none;
 }
-.header-button:hover {
-    background: white;
-    padding: 15px 40px;
-    border: 1px solid #fff;
-    color: #7014E8;
-    text-decoration: none;
-}
+
+    .header-button:hover {
+        background: white;
+        padding: 15px 40px;
+        border: 1px solid #fff;
+        color: #7014E8;
+        text-decoration: none;
+    }
+
 .description {
     left: 50%;
     position: absolute;
@@ -72,37 +82,44 @@ body {
     padding: 50px;
     border-radius: 12px;
 }
-.description h1 {
-    color: #fff;
-    font-weight: 800;
-}
-.description p {
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 1.3rem;
-    line-height: 1.5;
-}
-.description button {
-    border: 1px solid #fff;
-    background: linear-gradient(#7014E8, #4733DD);
-    border-radius: 0;
-    color:#fff;
-}
-.description button:hover {
-    border: 1px solid #fff;
-    background:#fff;
-    color:#7014E8;
-}
+
+    .description h1 {
+        color: #fff;
+        font-weight: 800;
+    }
+
+    .description p {
+        color: #fff;
+        margin-bottom: 40px;
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+
+    .description button {
+        border: 1px solid #fff;
+        background: linear-gradient(#7014E8, #4733DD);
+        border-radius: 0;
+        color: #fff;
+    }
+
+        .description button:hover {
+            border: 1px solid #fff;
+            background: #fff;
+            color: #7014E8;
+        }
+
 .details {
     border: 1px solid gray;
     padding: 75px;
     margin: 15px;
 }
+
 .container {
     margin-left: 0;
     margin-right: 0;
     background: #fff;
 }
+
 .row-bottom {
     background: #fff;
     position: fixed;
@@ -112,7 +129,8 @@ body {
     margin-left: 0;
     margin-right: 0;
 }
-#editor { 
+
+#editor {
     position: absolute;
     top: 0;
     right: 0;
@@ -121,6 +139,7 @@ body {
     margin-top: 15px;
     height: 400px;
 }
+
 #output {
     background: #fff;
     margin-top: 15px;
