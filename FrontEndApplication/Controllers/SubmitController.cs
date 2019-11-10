@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
@@ -14,6 +15,7 @@ namespace FrontEndApplication.Controllers
     public class Data
     {
         public string Code { get; set; }
+        public int Id { get; set; }
     }
 
     public class SubmitController : Controller
@@ -78,19 +80,41 @@ namespace FrontEndApplication.Controllers
 
             using (FileStream fs = new FileStream(@"" + filePath, FileMode.OpenOrCreate))
             {
-                string url = "https://45f300de.compilers.sphere-engine.com/api/v4/submissions?access_token=7cddeddad0b2f464f210adca7d0bf758";
-
                 string source = filePath;
 
                 string input = "input data";
 
                 var client = new RestClient(urlCompiler);
 
-                var request = new RestRequest("submissions");
+                var request = new RestRequest("submissions", Method.POST);
+                //request.AddHeader("Content-Type", "multipart/form-data");
+                // request.AddFile("file",filePath);
+                //request.AddHeader("compilerId", "2");
+                request.AddParameter("compilerId", "2");
+                request.AddJsonBody(
+                    new
+                    {
+                        compilerId = 2,
+                        source = fs.ToString()
+                    }); ;
+             
 
-                request.AddUrlSegment("access_token", compilerToken); // replaces matching token in request.Resource
+
+                
+
+                request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
+                
+
 
                 IRestResponse response = client.Execute(request);
+
+                string data = response.Content;
+
+                JObject jo = JObject.Parse(data);
+
+                int x = (int)jo["id"];
+
+
 
 
 
