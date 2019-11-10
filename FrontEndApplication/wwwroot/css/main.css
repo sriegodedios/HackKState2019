@@ -1,4 +1,4 @@
-body {
+html, body {
     padding: 0;
     margin: 0;
     background: linear-gradient(#7014E8 25%, #4733DD 60%);
@@ -9,7 +9,7 @@ body {
 /*--- navigation bar ---*/
 .navbar {
     background: #fff;
-    border: 1px solid gray;
+    border: 1px solid#b5b5b5;
 }
 
 .nav-link,
@@ -17,7 +17,7 @@ body {
     color: #7014E8;
     cursor: pointer;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.8rem;
     font-family: Raleway, sans-serif;
 }
 
@@ -27,20 +27,12 @@ body {
 
 .nav-link {
     margin-right: 1em !important;
-    font-size: 1.3rem;
-    border: 2px solid #7014E8;
+    font-size: 1.5rem;
     padding: 2px 5px;
 }
 
     .nav-link:hover {
-        color: #fff;
-        background: linear-gradient(#7014E8, #4733DD);
-        border: 1px solid #fff;
-    }
-
-    .nav-link:active {
-        color: #fff;
-        background: #8333f2;
+        color: #8333f2;
     }
 
 .navbar-collapse {
@@ -68,6 +60,7 @@ body {
         border: 1px solid #fff;
         color: #7014E8;
         text-decoration: none;
+        transition: 0.5s;
     }
 
 .description {
@@ -109,10 +102,22 @@ body {
         }
 
 .details {
-    border: 1px solid gray;
-    padding: 75px;
+    border: 3px double #7014E8;
+    ;
+    height: 160px;
+    padding: 50px;
     margin: 15px;
+    text-align: center;
+    border-radius: 30px;
 }
+
+    .details p {
+        font-family: Raleway, sans-serif;
+        font-weight: 900;
+        font-size: 1.1rem;
+        color: #7014E8;
+        padding: 0;
+    }
 
 .container {
     margin-left: 0;
@@ -124,8 +129,8 @@ body {
     background: #fff;
     position: fixed;
     bottom: 0;
-    height: 150px;
-    border: 1px solid #454545;
+    height: 200px;
+    border-top: 1px solid #454545;
     margin-left: 0;
     margin-right: 0;
 }
@@ -142,6 +147,36 @@ body {
 
 #output {
     background: #fff;
+    border: 1px solid #fff;
     margin-top: 15px;
     height: 400px;
+}
+
+#submit {
+    background: linear-gradient(#7014E8, #4733DD);
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+    #submit:hover {
+        background: #fff;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #7014E8;
+        border: 1px solid #fff;
+        margin-left: 15px;
+        margin-top: 10px;
+        transition: 0.5s;
+    }
+
+hr {
+    background: #fff;
+}
+
+.custom {
+    background-color: #D4CCCA;
 }

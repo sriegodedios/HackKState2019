@@ -3,74 +3,88 @@
 }
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous">
-
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
 </script>
 
-<div>
-	<div>
-		<h1>Main Content fhlsfalksghlkdsaj</h1>
-	</div>
-	<div>
-		<div><p>Details</p></div>
-		<div><p>Details</p></div>
-		<div><p>Details</p></div>
-	</div>
-	<div>
-		<h2>Login</h2>
-	</div>
-</div>
 
-<div1 id="pythoninput">
-    <textarea id="code" name="code" rows="15" cols="153">Insert code here...</textarea>
-    <textarea id="output" name="code" rows="15" cols="153">Output</textarea>
-</div1>
-    <button class="button" id="upload_code_submit">Submit Code</button>
+<div class="container-fluid custom">
+        <div class="row">
 
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="feature" id="editor">
+                    // Write your code here!!
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="feature" id="output">
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-lg-4">
+                <button class="btn btn-primary" id="upload_code_submit">Compile</button>
+            </div>
 
+        </div>
 
+<hr>
+<script src="https://pagecdn.io/lib/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    
+    var editor = ace.edit("editor");
+    var output = ace.edit("output");
+    editor.session.setValue("print('Hello World')")
+   // var editSession = ace.createEditSession("",);
 
+    editor.setTheme("ace/theme/solarized-light");
+    output.setTheme("ace/theme/solarized-light");
+    editor.session.setMode("ace/mode/python");
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
     var timer;
     function UploadCode() {
         $.ajax({
             url: "/submit/Submit",
             method: "POST",
-            data: {'code': $('#code').val() },
-            }).then(res => {
+            data: { 'code': editor.getValue() },
+        }).then(res => {
 
-                timer = setInterval(myTimer, 1000);
-                function myTimer() {
-                   InvokePoke(res) 
-                }
-
+            timer = setInterval(myTimer, 1000);
+            function myTimer() {
                 InvokePoke(res)
+            }
 
-            });
+            InvokePoke(res)
+
+        });
     }
 
     function InvokePoke(num) {
 
-          $.ajax({
+        $.ajax({
             url: "/submit/Response",
-              method: "POST",
-            data: {'id': num },
-          }).then(res => {
-              var o = JSON.parse(res);
-              var formatJson = JSON.stringify(o, null, '\t')
+            method: "POST",
+            data: { 'id': num },
+        }).then(res => {
+            var o = JSON.parse(res);
+            var formatJson = JSON.stringify(o, null, '\t')
 
-              console.log(o.result.status.code)
+            console.log(o.result.status.code)
 
-              if (o.result.status.code == 15) {
-                  GetResults(num)
-                  clearInterval(timer)
-              }
-              else if (o.result.status.code == 11) {
-                  alert("Error")
-                  clearInterval(timer)
-              }
-            });
+            if (o.result.status.code == 15) {
+               
+                clearInterval(timer);
+                GetResults(num);
+            }
+            else if (o.result.status.code == 11) {
+                alert("Error")
+                clearInterval(timer)
+            }
+        });
 
     }
 
@@ -78,11 +92,12 @@
         $.ajax({
             url: "/submit/GetResultCompile",
             method: "POST",
-            data: {'id': num },
-          }).then(res => {
-              $('#output').val(res)
-            });
-       
+            data: { 'id': num },
+        }).then(r => {
+            //$('#output').val(res)
+            output.session.setValue(r)
+        });
+
     }
 
     function createCORSRequest(method, url) {
@@ -98,9 +113,6 @@
         return xhr;
     }
 
-    
-
-
-    $('#upload_code_submit').on('click',UploadCode);
+    $('#upload_code_submit').on('click', UploadCode);
 
 </script>
