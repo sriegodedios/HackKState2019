@@ -12559,28 +12559,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/sriegodedios/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\shanerd\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj",
+      "projectUniqueName": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj",
       "projectName": "FrontEndApplication",
-      "projectPath": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/FrontEndApplication.csproj",
-      "packagesPath": "/Users/sriegodedios/.nuget/packages/",
-      "outputPath": "/Users/sriegodedios/Development/HackKState2019/FrontEndApplication/obj/",
+      "projectPath": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\FrontEndApplication.csproj",
+      "packagesPath": "C:\\Users\\shanerd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\shanerd\\HackKState2019\\FrontEndApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/sriegodedios/.config/NuGet/NuGet.Config"
+        "C:\\Users\\shanerd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

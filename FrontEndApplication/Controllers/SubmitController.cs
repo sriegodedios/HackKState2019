@@ -61,9 +61,9 @@ namespace FrontEndApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult<string> Submit(IFormCollection form)
+        public ActionResult<int> Submit(IFormCollection form)
         {
-            
+            string temp;
             string s = form["code"];
 
             string path = System.IO.Directory.GetCurrentDirectory();
@@ -80,23 +80,29 @@ namespace FrontEndApplication.Controllers
 
             using (FileStream fs = new FileStream(@"" + filePath, FileMode.OpenOrCreate))
             {
+                
+
+                Console.WriteLine("Output:"+fs.ToString());
                 string source = filePath;
 
                 string input = "input data";
 
                 var client = new RestClient(urlCompiler);
 
+                string t = fs.ToString();
+
                 var request = new RestRequest("submissions", Method.POST);
+
                 //request.AddHeader("Content-Type", "multipart/form-data");
                 // request.AddFile("file",filePath);
                 //request.AddHeader("compilerId", "2");
-                request.AddParameter("compilerId", "116");
+                //request.AddParameter("compilerId", "116");
                 request.AddJsonBody(
                     new
                     {
-                        compilerId = 2,
-                        source = fs.ToString()
-                    }); ;
+                        compilerId = 116,
+                        source = s
+                    });
              
 
 
@@ -112,10 +118,13 @@ namespace FrontEndApplication.Controllers
                 int x = (int)jo["id"];
 
 
-                client = new RestClient(urlCompiler);
-                request = new RestRequest("submissions/"+x, Method.POST);
+                return x;
+
+                /*client = new RestClient(urlCompiler);
+                request = new RestRequest("submissions/"+x);
                 request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
                 response = client.Execute(request);
+                temp = response.Content;*/
 
 
 
@@ -138,7 +147,7 @@ namespace FrontEndApplication.Controllers
             //curl -X POST -F "problemId=1" -F "compilerId=1" -F "source=@prog.cpp" "https://45f300de.compilers.sphere-engine.com/api/v4/submissions?access_token=7cddeddad0b2f464f210adca7d0bf758"
 
 
-            return s;
+           // return temp;
         }
 
 
@@ -146,7 +155,19 @@ namespace FrontEndApplication.Controllers
         {
             return value;
         }
-       
+
+        public ActionResult<string> Response(IFormCollection form)
+        {
+            int val = Convert.ToInt32(form["id"]);
+            var client = new RestClient(urlCompiler);
+            var request = new RestRequest("submissions/"+val);
+            request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
+            var response = client.Execute(request);
+            var temp = response.Content;
+
+            return temp;
+        }
+
 
 
         // GET: Submit/Edit/5

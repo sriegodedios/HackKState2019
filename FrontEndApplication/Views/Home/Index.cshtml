@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home - Hack K-State";
 }
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous">
+
+</script>
+
 <div>
 	<div>
 		<h1>Main Content</h1>
@@ -15,9 +22,60 @@
 	</div>
 </div>
 
-<form action="/submit/Submit" method="post">
     <div1 id="pythoninput">
-        <textarea name="code" rows="15" cols="153">Insert code here...</textarea>
+        <textarea id="code" name="code" rows="15" cols="153">Insert code here...</textarea>
     </div1>
-    <button class="button" type="submit">Submit Code</button>
-</form>
+    <button class="button" id="upload_code_submit">Submit Code</button>
+
+
+
+
+<script>
+    var timer;
+    function UploadCode() {
+        $.ajax({
+            url: "/submit/Submit",
+            method: "POST",
+            data: {'code': $('#code').val() },
+            }).then(res => {
+
+                timer = setInterval(myTimer, 1000);
+                function myTimer() {
+                   InvokePoke(res) 
+                }
+
+                InvokePoke(res)
+
+            });
+    }
+
+    function InvokePoke(num) {
+
+          $.ajax({
+            url: "/submit/Response",
+              method: "POST",
+            data: {'id': num },
+          }).then(res => {
+              var o = JSON.parse(res);
+              var formatJson = JSON.stringify(o, null, '\t')
+
+
+              console.log(o.result.status.code)
+
+              if (o.result.status.code == 15) {
+                  //alert(formatJson)
+                  clearInterval(timer)
+              }
+              else if (o.result.status.code == 11) {
+                  alert("Error")
+                  clearInterval(timer)
+              }
+            });
+
+    }
+
+
+
+    $('#upload_code_submit').on('click',UploadCode);
+
+</script>
