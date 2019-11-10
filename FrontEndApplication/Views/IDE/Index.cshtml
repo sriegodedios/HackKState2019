@@ -76,18 +76,12 @@
 
     function GetResults(num) {
         $.ajax({
-            url: "https://45f300de.compilers.sphere-engine.com/api/v4/submissions/" + num + "/output?access_token=7cddeddad0b2f464f210adca7d0bf758",
-              method: "GET",
+            url: "/submit/GetResultCompile",
+            method: "POST",
             data: {'id': num },
           }).then(res => {
               $('#output').val(res)
             });
-        //var url = "https://45f300de.compilers.sphere-engine.com/api/v4/submissions/" + num + "/output?access_token=7cddeddad0b2f464f210adca7d0bf758";
-        /*var xhr = createCORSRequest('GET', url);
-        if (!xhr) {
-            throw new Error('CORS not supported');
-        }
-        console.log(xhr);*/
        
     }
 

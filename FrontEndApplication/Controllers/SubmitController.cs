@@ -160,7 +160,22 @@ namespace FrontEndApplication.Controllers
         {
             int val = Convert.ToInt32(form["id"]);
             var client = new RestClient(urlCompiler);
-            var request = new RestRequest("submissions/"+val);
+            var request = new RestRequest("submissions/"+val+"/output");
+            request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
+            var response = client.Execute(request);
+            var temp = response.Content;
+
+            return temp;
+        }
+
+
+        // POST: Submit/GetResultCompile
+        [HttpPost]
+        public ActionResult<string> GetResultCompile(IFormCollection form)
+        {
+            int val = Convert.ToInt32(form["id"]);
+            var client = new RestClient(urlCompiler);
+            var request = new RestRequest("submissions/" + val +"output");
             request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
             var response = client.Execute(request);
             var temp = response.Content;

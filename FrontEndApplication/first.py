@@ -19,3 +19,8 @@ data = {
 
 r = requests.post(RUN_URL, data=data)
 print(r.json())
+
+
+curl -X POST -F "compilerId=1" -F "source=@prog.cpp" -F "input=input data" "https://45f300de.compilers.sphere-engine.com/api/v4/submissions?access_token=7cddeddad0b2f464f210adca7d0bf758"
+
+curl "https://45f300de.compilers.sphere-engine.com/api/v4/submissions/88061525?access_token=7cddeddad0b2f464f210adca7d0bf758"
