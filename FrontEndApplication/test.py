@@ -1,1 +1,1 @@
-print('go')
+print("GO")

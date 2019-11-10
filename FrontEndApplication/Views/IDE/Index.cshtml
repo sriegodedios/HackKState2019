@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Home - Hack K-State";
+}
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous">
+
+</script>
+
+<div>
+	<div>
+		<h1>Main Content fhlsfalksghlkdsaj</h1>
+	</div>
+	<div>
+		<div><p>Details</p></div>
+		<div><p>Details</p></div>
+		<div><p>Details</p></div>
+	</div>
+	<div>
+		<h2>Login</h2>
+	</div>
+</div>
+
+<div1 id="pythoninput">
+    <textarea id="code" name="code" rows="15" cols="153">Insert code here...</textarea>
+    <textarea id="output" name="code" rows="15" cols="153">Output</textarea>
+</div1>
+    <button class="button" id="upload_code_submit">Submit Code</button>
+
+
+
+
+<script>
+    var timer;
+    function UploadCode() {
+        $.ajax({
+            url: "/submit/Submit",
+            method: "POST",
+            data: {'code': $('#code').val() },
+            }).then(res => {
+
+                timer = setInterval(myTimer, 1000);
+                function myTimer() {
+                   InvokePoke(res) 
+                }
+
+                InvokePoke(res)
+
+            });
+    }
+
+    function InvokePoke(num) {
+
+          $.ajax({
+            url: "/submit/Response",
+              method: "POST",
+            data: {'id': num },
+          }).then(res => {
+              var o = JSON.parse(res);
+              var formatJson = JSON.stringify(o, null, '\t')
+
+              console.log(o.result.status.code)
+
+              if (o.result.status.code == 15) {
+                  GetResults(num)
+                  clearInterval(timer)
+              }
+              else if (o.result.status.code == 11) {
+                  alert("Error")
+                  clearInterval(timer)
+              }
+            });
+
+    }
+
+    function GetResults(num) {
+        $.ajax({
+            url: "https://45f300de.compilers.sphere-engine.com/api/v4/submissions/" + num + "/output?access_token=7cddeddad0b2f464f210adca7d0bf758",
+              method: "GET",
+            data: {'id': num },
+          }).then(res => {
+              $('#output').val(res)
+            });
+        //var url = "https://45f300de.compilers.sphere-engine.com/api/v4/submissions/" + num + "/output?access_token=7cddeddad0b2f464f210adca7d0bf758";
+        /*var xhr = createCORSRequest('GET', url);
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+        console.log(xhr);*/
+       
+    }
+
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+            xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+        } else {
+            xhr = null;
+        }
+        return xhr;
+    }
+
+    
+
+
+    $('#upload_code_submit').on('click',UploadCode);
+
+</script>

@@ -1,81 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home - Hack K-State";
 }
-
-<script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous">
-
-</script>
-
-<div>
-	<div>
-		<h1>Main Content</h1>
-	</div>
-	<div>
-		<div><p>Details</p></div>
-		<div><p>Details</p></div>
-		<div><p>Details</p></div>
-	</div>
-	<div>
-		<h2>Login</h2>
-	</div>
-</div>
-
-    <div1 id="pythoninput">
-        <textarea id="code" name="code" rows="15" cols="153">Insert code here...</textarea>
-    </div1>
-    <button class="button" id="upload_code_submit">Submit Code</button>
-
-
-
-
-<script>
-    var timer;
-    function UploadCode() {
-        $.ajax({
-            url: "/submit/Submit",
-            method: "POST",
-            data: {'code': $('#code').val() },
-            }).then(res => {
-
-                timer = setInterval(myTimer, 1000);
-                function myTimer() {
-                   InvokePoke(res) 
-                }
-
-                InvokePoke(res)
-
-            });
-    }
-
-    function InvokePoke(num) {
-
-          $.ajax({
-            url: "/submit/Response",
-              method: "POST",
-            data: {'id': num },
-          }).then(res => {
-              var o = JSON.parse(res);
-              var formatJson = JSON.stringify(o, null, '\t')
+   
+ 
+        
+        <header class="page-header header container-fluid"></header>
+        <div class="description">
+            <h1>Welcome to Pyrple!</h1>
+            <p>An Online Python IDE and Interpreter for Hackers on the Go</p>
+            <a class="header-button" href="/ide">Get Coding!</a>
+        </div>
+        <div class="container">
+            <div class="row row-bottom fixed-bottom">
+                <div class="col-md-4 col-sm-12">
+                    <div class="details">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="details">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="details">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-              console.log(o.result.status.code)
-
-              if (o.result.status.code == 15) {
-                  //alert(formatJson)
-                  clearInterval(timer)
-              }
-              else if (o.result.status.code == 11) {
-                  alert("Error")
-                  clearInterval(timer)
-              }
-            });
-
-    }
-
-
-
-    $('#upload_code_submit').on('click',UploadCode);
-
-</script>

@@ -6,28 +6,42 @@
     <title>@ViewData["Title"]</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <!----link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /-->
+        <!----link rel="stylesheet" href="~/css/site.css" /-->
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        <!----link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /-->
     </environment>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Encode+Sans|Montserrat|Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+    <title>Pyrple - Online Python IDE</title>
+
+
+
+
+
 </head>
 <body>
-    <nav id="navigation">
-        <div class="container">
-            <ul class="nav-item-list">
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="#">Pyrple</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <h1>Cloud Code</h1>
-                </li>
-                <li class="nav-item">
-                    <p>Online Python IDE</p>
+                    <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
         </div>
+    </nav>
+    <nav class="navbar navbar-expand-md">
     </nav>
 
     <partial name="_CookieConsentPartial" />
