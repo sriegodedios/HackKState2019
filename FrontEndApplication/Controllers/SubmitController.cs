@@ -63,7 +63,7 @@ namespace FrontEndApplication.Controllers
         [HttpPost]
         public ActionResult<string> Submit(IFormCollection form)
         {
-            string secret = "d3ce6e50c86c80ad60f3e741c1db12c704d1c1a4";
+            
             string s = form["code"];
 
             string path = System.IO.Directory.GetCurrentDirectory();
@@ -90,7 +90,7 @@ namespace FrontEndApplication.Controllers
                 //request.AddHeader("Content-Type", "multipart/form-data");
                 // request.AddFile("file",filePath);
                 //request.AddHeader("compilerId", "2");
-                request.AddParameter("compilerId", "2");
+                request.AddParameter("compilerId", "116");
                 request.AddJsonBody(
                     new
                     {
@@ -107,12 +107,16 @@ namespace FrontEndApplication.Controllers
 
 
                 IRestResponse response = client.Execute(request);
-
                 string data = response.Content;
-
                 JObject jo = JObject.Parse(data);
-
                 int x = (int)jo["id"];
+
+
+                client = new RestClient(urlCompiler);
+                request = new RestRequest("submissions/"+x, Method.POST);
+                request.AddQueryParameter("access_token", compilerToken); // replaces matching token in request.Resource
+                response = client.Execute(request);
+
 
 
 
